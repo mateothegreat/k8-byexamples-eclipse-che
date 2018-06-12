@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: $APP
+  namespace: $NS
+  labels:
+    app: $APP
+spec:
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: $APP
